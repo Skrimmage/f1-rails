@@ -1,0 +1,14 @@
+<h1>F1 Stats</h1>
+
+<h2>2018 Results</h2>
+<table>
+    <tr><th>Race</th><th>Winner</th><th>Constructor</th><th># Finished</th></tr>
+<% Race.where(year: 2018).each do |r| %>
+        <tr>
+        <td><%= r.name %></td>
+        <td><%= r.winner.driver.name %></td>
+        <td><%= r.winner.constructor.name %></td>
+        <td><%= r.finished %></td>
+        </tr>
+<% end %>
+</table>

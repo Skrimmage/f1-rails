@@ -10,6 +10,6 @@ class Race < ActiveRecord::Base
   end
 
   def finished
-    results.where("status_id in (1, 11, 12, 13, 14, 15, 16, 17, 18, 19)").count
+    results.where("status_id in (1, 11, 12, 13, 14, 15, 16, 17, 18, 19)ex").count
   end
 end

@@ -5,7 +5,7 @@
     <tr><th>Race</th><th>Winner</th><th>Constructor</th><th># Finished</th></tr>
 <% Race.where(year: 2018).each do |r| %>
         <tr>
-        <td><%= r.name %></td>
+        <td><%= link_to r.name, race_show_path(r) %></td>
         <td><%= r.winner.driver.name %></td>
         <td><%= r.winner.constructor.name %></td>
         <td><%= r.finished %></td>

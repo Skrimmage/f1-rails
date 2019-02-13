@@ -1,0 +1,15 @@
+<h1><%= @race.name %> Results</h1>
+
+<table>
+<tr><th>Position</th><th>Driver</th><th>Constructor</th><th>Points</th><th>Laps</th><th>Grid</th><th>Change</th></tr>
+<% @race.results.sort_by(&:position_order).each do |r| %>
+    <tr>
+        <td><%= r.position_order %></td>
+        <td><%= r.driver.name %></td>
+        <td><%= r.constructor.name %></td>
+        <td><%= r.points.to_i %></td>
+        <td><%= r.laps %></td>
+        <td><%= r.grid %></td>
+        <td><%= r.grid - r.position_order %></td>
+    </tr>
+<% end %>
